@@ -44,7 +44,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     
-    
+    alert("Play against a computer in a best-of-five game of Rock Paper Scissors. Good luck!");
     
     let i;
     for (i = 0; i < 5; i++) {
