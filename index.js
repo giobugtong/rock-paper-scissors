@@ -19,44 +19,29 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     
-    playerSelection = prompt("Choose: Rock, Paper, or Scissors?");
+    playerSelection = prompt("Choose: Rock, Paper, or Scissors?").toLowerCase();
     computerSelection = computerPlay();
 
-    if (playerSelection.toLowerCase() === computerSelection) {
+    if (playerSelection === computerSelection) {
         return ("It's a tie! You both chose " + playerSelection + ".");
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper" ||
-                playerSelection.toLowerCase() === "paper" && computerSelection === "scissors" ||
-                playerSelection.toLowerCase() === "scissors" && computerSelection === "rock") {
-                    return (1);
-    } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "scissors" ||
-                playerSelection.toLowerCase() === "paper" && computerSelection === "rock" ||
-                playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
-                    return (2);
+    } else if (playerSelection === "rock" && computerSelection === "paper" ||
+                playerSelection === "paper" && computerSelection === "scissors" ||
+                playerSelection === "scissors" && computerSelection === "rock") {
+                    computerScore += 1;
+                    onsole.log("Computer wins! " + computerSelection + " beats " + playerSelection)
+    } else if (playerSelection === "rock" && computerSelection === "scissors" ||
+                playerSelection === "paper" && computerSelection === "rock" ||
+                playerSelection === "scissors" && computerSelection === "paper") {
+                    playerScore += 1;
+                    console.log("You win! " + playerSelection + " beats " + computerSelection);
     } else {
-        return ("Input error. Please check your spelling.")
+        console.log("Input error. Please check your spelling.")
     }
 }
 
-function addScore(playRound) {
-    let score = "Player score: " + playerScore + " | " + "Computer score: " + computerScore;
-    if (playRound === 1) {
-        computerScore += 1;
-        console.log("Computer wins! " + computerSelection + " beats " + playerSelection.toLowerCase());
-        console.log(score);
-    } else if (playRound === 2) {
-        playerScore += 1;
-        console.log("You win! " + playerSelection.toLowerCase() + " beats " + computerSelection);
-        console.log(score);
-    } else {
-        console.log(score);
-    }
-}
 
 function game() {
-    
-
     playRound(playerSelection, computerSelection);
-    addScore(playRound);
 
 }
     
