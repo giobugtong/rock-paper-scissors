@@ -1,5 +1,6 @@
 let playerSelection;
 let computerSelection;
+let score;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -18,31 +19,34 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    
+    score = "Player score: " + playerScore + " | " + "Computer score: " + computerScore;
     playerSelection = prompt("Choose: Rock, Paper, or Scissors?").toLowerCase();
     computerSelection = computerPlay();
-
+    
     if (playerSelection === computerSelection) {
-        return ("It's a tie! You both chose " + playerSelection + ".");
+        console.log("It's a tie! You both chose " + playerSelection + ".");
     } else if (playerSelection === "rock" && computerSelection === "paper" ||
                 playerSelection === "paper" && computerSelection === "scissors" ||
                 playerSelection === "scissors" && computerSelection === "rock") {
-                    computerScore += 1;
-                    onsole.log("Computer wins! " + computerSelection + " beats " + playerSelection)
+                    computerScore ++ ;
+                    console.log("Computer wins! " + computerSelection + " beats " + playerSelection)
     } else if (playerSelection === "rock" && computerSelection === "scissors" ||
                 playerSelection === "paper" && computerSelection === "rock" ||
                 playerSelection === "scissors" && computerSelection === "paper") {
-                    playerScore += 1;
+                    playerScore ++ ;
                     console.log("You win! " + playerSelection + " beats " + computerSelection);
     } else {
         console.log("Input error. Please check your spelling.")
     }
+ console.log(score)   
 }
 
 
 function game() {
-    playRound(playerSelection, computerSelection);
-
+    let i;
+    for (i = 0; i < 5; i++) {
+        console.log(playRound(playerSelection, computerSelection));
+    }
 }
     
 
