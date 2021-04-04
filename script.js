@@ -38,7 +38,7 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("Input error. Please check your spelling.")
     }
- console.log(score)   
+ return `Player score: ${playerScore} | Computer score: ${computerScore}`;  
 }
 
 
