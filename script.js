@@ -43,9 +43,20 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
+    
+    
+    
     let i;
     for (i = 0; i < 5; i++) {
         console.log(playRound(playerSelection, computerSelection));
+    }
+
+    if (playerScore === computerScore) {
+        alert("Game over! It's a tie!");
+    } else if (playerScore > computerScore) {
+        alert("Game over! You win!");
+    } else if (computerScore > playerScore) {
+        alert("Game over! You lose!")
     }
 }
     
