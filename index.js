@@ -42,7 +42,13 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     let playerSelection = prompt("Choose: Rock, Paper, or Scissors?").toLowerCase();
     
-    function keepScore(playerSelection, computerSelection) {
+    
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(keepScore(playerSelection, computerSelection))
+
+}
+
+function keepScore(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         console.log(score);
     } else if (playerSelection === "rock" && computerSelection === "paper") {
@@ -67,12 +73,6 @@ function game() {
         console.log("Input error. Please check your spelling.");
         console.log(score);
     }
-}
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(keepScore(playerSelection, computerSelection))
-
-}
-
 
 
     
