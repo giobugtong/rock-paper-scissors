@@ -1,0 +1,26 @@
+/* First time using a separate CSS file*/
+#background{
+    background-color: rgb(255, 255, 255);
+    font-family: helvetica, arial, sans-serif;
+}
+h1{
+    text-align: center;
+    margin-top: 40px;
+}
+#greet{
+    text-align: center;
+    line-height: 12px;
+}
+#btnPlay{
+    padding: 11px 30px 11px 30px;
+    background-color: rgb(191, 112, 255);
+    border: none;
+    border-style: none;
+    font-size: 25px;
+    margin: 40px auto 0 auto;
+    display: block;
+}
+#btnPlay:hover{
+    cursor: pointer;
+    background-color:rgb(196, 132, 248);
+}
