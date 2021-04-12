@@ -4,7 +4,12 @@ let score;
 let playerScore = 0;
 let computerScore = 0;
 
-console.log(game()); //initializes the game upon page open/refresh
+const btnPlay = document.querySelector("#btnPlay");
+btnPlay.addEventListener("click", game);
+
+//console.log(game()); //initializes the game upon page open/refresh
+
+
 
 function computerPlay() { //returns random number which would correspond to the computer's play
     let choice = Math.floor(Math.random() * 3);
