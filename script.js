@@ -7,10 +7,6 @@ let computerScore = 0;
 const btnPlay = document.querySelector("#btnPlay");
 btnPlay.addEventListener("click", game);
 
-//console.log(game()); //initializes the game upon page open/refresh
-
-
-
 function computerPlay() { //returns random number which would correspond to the computer's play
     let choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
