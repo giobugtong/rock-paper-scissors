@@ -9,10 +9,11 @@ let computerScore = 0;
 const playRock = document.querySelector("#rock");
 const playPaper = document.querySelector("#paper");
 const playScissors = document.querySelector("#scissors");
+const bgImage = document.querySelector("html");
 
-playRock.addEventListener("click", () => {playRound("rock")});
-playPaper.addEventListener("click", () => {playRound("paper")});
-playScissors.addEventListener("click", () => {playRound("scissors")});
+playRock.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://i.redd.it/ou2vigd2ttk11.jpg)", playRound("rock")});
+playPaper.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://media.tumblr.com/tumblr_ledezyKF7x1qzfj78.png)", playRound("rock")});
+playScissors.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://swsca-production.s3.amazonaws.com/uploads/attachments/17/edward-final-blog-post.jpg?1337098664)", playRound("rock")});
 
 function computerPlay() { //returns random number which would correspond to the computer's play
     let choice = Math.floor(Math.random() * 3);
@@ -57,6 +58,7 @@ function playRound(playerSelection, computerSelection) { //plays one round
         playRock.disabled = true;
         playPaper.disabled = true;
         playScissors.disabled = true;
+        bgImage.style.cssText = "background-image: url(https://cdn5.vectorstock.com/i/1000x1000/67/24/winner-label-or-sticker-vector-28196724.jpg)";
     } else if (computerScore == 5) {
         winner.textContent = "You lose! Try again."
         playAgain.style.cssText = "display: block";
@@ -64,5 +66,6 @@ function playRound(playerSelection, computerSelection) { //plays one round
         playRock.disabled = true;
         playPaper.disabled = true;
         playScissors.disabled = true;
+        bgImage.style.cssText = "background-image: url(https://previews.123rf.com/images/carmendorin/carmendorin1308/carmendorin130800356/21873166-grunge-rubber-stamp-with-word-loser-vector-illustration.jpg)";        
     }
 }

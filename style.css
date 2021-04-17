@@ -1,7 +1,10 @@
 /* First time using a separate CSS file*/
 html{
-    background-color: rgb(255, 255, 255);
+    background-size: 15vmax;
     font-family: helvetica, arial, sans-serif;
+}
+body{
+    background-color: rgba(255, 255, 255, 0.795);
 }
 h1{
     text-align: center;
@@ -67,7 +70,7 @@ button{
     border: none;
     border-style: none;
     font-size: 25px;
-    margin: 30px auto 0 auto;
+    margin: 30px auto 100px auto;
     display: none;
     font-weight: bold;
 }
