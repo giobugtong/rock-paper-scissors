@@ -47,7 +47,11 @@ function playRound(playerSelection, computerSelection) { //plays one round
     }
     score.textContent = `Player score: ${playerScore} | Computer score: ${computerScore}`;  //reports the running score of the game in the console
 
-
+    if (playerScore == 5) {
+        winner.textContent = "Congratulations! You win!";
+    } else if (computerScore == 5) {
+        winner.textContent = "You lose! Try again."
+    }
 }
 
 function game() { //main algorithm that starts the game
