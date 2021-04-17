@@ -58,7 +58,7 @@ function playRound(playerSelection, computerSelection) { //plays one round
         playRock.disabled = true;
         playPaper.disabled = true;
         playScissors.disabled = true;
-        bgImage.style.cssText = "background-image: url(https://cdn5.vectorstock.com/i/1000x1000/67/24/winner-label-or-sticker-vector-28196724.jpg)";
+        bgImage.style.cssText = "background-image: url(https://thumbs.dreamstime.com/b/winner-ribbon-winner-ribbon-round-sticker-winner-winner-ribbon-sign-158355182.jpg)";
     } else if (computerScore == 5) {
         winner.textContent = "You lose! Try again."
         playAgain.style.cssText = "display: block";
