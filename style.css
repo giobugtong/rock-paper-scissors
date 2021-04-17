@@ -2,30 +2,30 @@
 html{
     background-size: 15vmax;
     font-family: helvetica, arial, sans-serif;
+    line-height: 1;
 }
 body{
+    padding: 1em;
     background-color: rgba(255, 255, 255, 0.849);
-    min-height: 700px;
+
 }
 h1{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 1rem;
 }
 h3{
     text-align: center;
 }
 #greet{
-    font-size: 19px;
+    font-size: 1rem;
     text-align: center;
-    line-height: 1;
 }
 #plays-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
     #plays-container{
         flex-direction: column;
     }
@@ -35,51 +35,54 @@ button{
 }
 .play{
     height: 2em;
-    width: 6em;
+    width: 8em;
     background-color:rgba(255, 255, 255, 0.5);
     border: solid 2px black;
-    font-size: 25px;
-    margin: .5rem;
+    font-size: 1.3rem;
+    margin: .25rem;
     display: inline;
     font-weight: bold;
 }
 .play:hover{
     cursor: pointer;
     background-color: rgb(253, 219, 125);
+    transition: .15s;
+    transform: scale(1.04);
 }
 #computer-weapon{
-    font-size: 20px;
+    font-size: 1rem;
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1rem;
 }
 #result{
-    font-size: 20px;
+    font-size: 1rem;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 #score{
-    font-size: 20px;
+    font-size: 1rem;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 #winner{
-    font-size: 26px;
+    font-size: 1.4rem;
     font-weight: bold;
     text-align: center;
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 #reload{
     height: 2em;
-    width: 8em;
+    width: 12em;
     background-color:rgb(126, 255, 143);
     border: none;
     border-style: none;
     font-size: 25px;
-    margin: 30px auto 100px auto;
+    margin: 1rem auto 0 auto;
     display: none;
     font-weight: bold;
 }
 #reload:hover{
     cursor: pointer;
     background-color:rgb(111, 219, 125);
+    transition: .15s;
 }
