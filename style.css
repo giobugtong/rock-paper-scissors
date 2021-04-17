@@ -7,11 +7,10 @@ html{
 body{
     padding: 1em;
     background-color: rgba(255, 255, 255, 0.849);
-
 }
 h1{
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0px;
 }
 h3{
     text-align: center;
@@ -72,7 +71,7 @@ button{
 }
 #reload{
     height: 2em;
-    width: 12em;
+    width: 10em;
     background-color:rgb(126, 255, 143);
     border: none;
     border-style: none;

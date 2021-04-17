@@ -11,18 +11,18 @@ const playPaper = document.querySelector("#paper");
 const playScissors = document.querySelector("#scissors");
 const bgImage = document.querySelector("html");
 
-playRock.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://i.redd.it/ou2vigd2ttk11.jpg)", playRound("rock")});
-playPaper.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://media.tumblr.com/tumblr_ledezyKF7x1qzfj78.png)", playRound("rock")});
-playScissors.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://swsca-production.s3.amazonaws.com/uploads/attachments/17/edward-final-blog-post.jpg?1337098664)", playRound("rock")});
+playRock.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://i.redd.it/ou2vigd2ttk11.jpg)", playRound("Rock")});
+playPaper.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://media.tumblr.com/tumblr_ledezyKF7x1qzfj78.png)", playRound("Paper")});
+playScissors.addEventListener("click", () => {bgImage.style.cssText = "background-image: url(https://swsca-production.s3.amazonaws.com/uploads/attachments/17/edward-final-blog-post.jpg?1337098664)", playRound("Scissors")});
 
 function computerPlay() { //returns random number which would correspond to the computer's play
     let choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
-        return ("rock");
+        return ("Rock");
     } else if (choice === 1) {
-        return ("paper");
+        return ("Paper");
     } else if (choice === 2) {
-        return ("scissors");
+        return ("Scissors");
     }
 }
 
@@ -37,15 +37,16 @@ function playRound(playerSelection, computerSelection) { //plays one round
 
     if (playerSelection === computerSelection) { //determines winner by comparing the player's and computer's plays
         result.textContent = `It's a tie! You both chose ${computerSelection}`;
-    } else if (playerSelection === "rock" && computerSelection === "paper" ||
-                playerSelection === "paper" && computerSelection === "scissors" ||
-                playerSelection === "scissors" && computerSelection === "rock") {
+        computerWeapon.textContent = "";
+    } else if (playerSelection === "Rock" && computerSelection === "Paper" ||
+                playerSelection === "Paper" && computerSelection === "Scissors" ||
+                playerSelection === "Scissors" && computerSelection === "Rock") {
                     computerScore ++ ; //increments the computer's score by 1
                     computerWeapon.textContent = `Computer chose ${computerSelection}!`
                     result.textContent = `Computer wins! ${computerSelection} beats ${playerSelection}`;
-    } else if (playerSelection === "rock" && computerSelection === "scissors" ||
-                playerSelection === "paper" && computerSelection === "rock" ||
-                playerSelection === "scissors" && computerSelection === "paper") {
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors" ||
+                playerSelection === "Paper" && computerSelection === "Rock" ||
+                playerSelection === "Scissors" && computerSelection === "Paper") {
                     playerScore ++ ; //increments the player's score by 1
                     computerWeapon.textContent = `Computer chose ${computerSelection}!`
                     result.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
