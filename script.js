@@ -28,6 +28,7 @@ function computerPlay() { //returns random number which would correspond to the 
 const result = document.querySelector("#result");
 const score = document.querySelector("#score");
 const winner = document.querySelector("#winner");
+const playAgain = document.querySelector("#reload");
 
 function playRound(playerSelection, computerSelection) { //plays one round
     computerSelection = computerPlay();
@@ -49,20 +50,17 @@ function playRound(playerSelection, computerSelection) { //plays one round
 
     if (playerScore == 5) {
         winner.textContent = "Congratulations! You win!";
+        playAgain.style.cssText = "display: block";
+        playAgain.addEventListener("click", () => {location.reload()});
+        playRock.disabled = true;
+        playPaper.disabled = true;
+        playScissors.disabled = true;
     } else if (computerScore == 5) {
         winner.textContent = "You lose! Try again."
-    }
-}
-
-function game() { //main algorithm that starts the game
-    
-    alert("Play against a computer in a best-of-five game of Rock Paper Scissors. Good luck!"); //welcome message upon page open/refresh
-
-    if (playerScore === computerScore) { //determines the winner of the game after 5 rounds as dictated by the for loop above
-        alert("Game over! It's a tie!");
-    } else if (playerScore > computerScore) {
-        alert("Game over! You win!");
-    } else if (computerScore > playerScore) {
-        alert("Game over! You lose!")
+        playAgain.style.cssText = "display: block";
+        playAgain.addEventListener("click", () => {location.reload()});
+        playRock.disabled = true;
+        playPaper.disabled = true;
+        playScissors.disabled = true;
     }
 }
