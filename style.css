@@ -5,6 +5,7 @@ html{
 }
 body{
     background-color: rgba(255, 255, 255, 0.849);
+    min-height: 700px;
 }
 h1{
     text-align: center;
@@ -19,22 +20,26 @@ h3{
     line-height: 1;
 }
 #plays-container{
-    position: relative;
-    display: block;
-    width: 519px;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+@media only screen and (max-width: 500px) {
+    #plays-container{
+        flex-direction: column;
+    }
 }
 button{
     outline: none;
 }
 .play{
-    height: 50px;
-    width: 170px;
-    background-color:rgb(211, 211, 211);
-    border: none;
-    border-style: none;
+    height: 2em;
+    width: 6em;
+    background-color:rgba(255, 255, 255, 0.5);
+    border: solid 2px black;
     font-size: 25px;
-    margin: 10px auto 0 auto;
+    margin: .5rem;
     display: inline;
     font-weight: bold;
 }
@@ -64,8 +69,8 @@ button{
     margin-top: 1em;
 }
 #reload{
-    height: 50px;
-    width: 170px;
+    height: 2em;
+    width: 8em;
     background-color:rgb(126, 255, 143);
     border: none;
     border-style: none;
