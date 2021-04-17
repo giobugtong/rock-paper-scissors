@@ -7,6 +7,14 @@ let computerScore = 0;
 // const btnPlay = document.querySelector("#btnPlay");
 // btnPlay.addEventListener("click", game);
 
+const playRock = document.querySelector("#rock");
+const playPaper = document.querySelector("#paper");
+const playScissors = document.querySelector("#scissors");
+
+playRock.addEventListener("click", () => {playRound("rock")});
+playPaper.addEventListener("click", () => {playRound("paper")});
+playScissors.addEventListener("click", () => {playRound("scissors")});
+
 function computerPlay() { //returns random number which would correspond to the computer's play
     let choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
@@ -19,10 +27,8 @@ function computerPlay() { //returns random number which would correspond to the 
 }
 
 function playRound(playerSelection, computerSelection) { //plays one round
-    score = "Player score: " + playerScore + " | " + "Computer score: " + computerScore;
-    playerSelection = prompt("Choose: Rock, Paper, or Scissors?").toLowerCase();
     computerSelection = computerPlay();
-    
+
     if (playerSelection === computerSelection) { //determines winner by comparing the player's and computer's plays
         console.log("It's a tie! You both chose " + playerSelection + ".");
     } else if (playerSelection === "rock" && computerSelection === "paper" ||
@@ -38,7 +44,7 @@ function playRound(playerSelection, computerSelection) { //plays one round
     } else {
         console.log("Input error. Please check your spelling.") //error message in case of mispelled word, no scores awarded
     }
- return `Player score: ${playerScore} | Computer score: ${computerScore}`;  //reports the running score of the game in the console
+ console.log(`Player score: ${playerScore} | Computer score: ${computerScore}`);  //reports the running score of the game in the console
 }
 
 function game() { //main algorithm that starts the game
