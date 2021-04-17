@@ -47,6 +47,7 @@ function playRound(playerSelection, computerSelection) { //plays one round
                 playerSelection === "paper" && computerSelection === "rock" ||
                 playerSelection === "scissors" && computerSelection === "paper") {
                     playerScore ++ ; //increments the player's score by 1
+                    computerWeapon.textContent = `Computer chose ${computerSelection}!`
                     result.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
     }
     score.textContent = `Player score: ${playerScore} | Computer score: ${computerScore}`;  //reports the running score of the game in the console
