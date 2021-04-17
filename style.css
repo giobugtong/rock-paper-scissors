@@ -21,6 +21,9 @@ h3{
     width: 519px;
     margin: auto;
 }
+button{
+    outline: none;
+}
 .play{
     height: 50px;
     width: 170px;
