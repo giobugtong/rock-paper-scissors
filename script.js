@@ -1,6 +1,5 @@
 let playerSelection;
 let computerSelection;
-let score;
 let playerScore = 0;
 let computerScore = 0;
 
@@ -26,25 +25,29 @@ function computerPlay() { //returns random number which would correspond to the 
     }
 }
 
+const result = document.querySelector("#result");
+const score = document.querySelector("#score");
+const winner = document.querySelector("#winner");
+
 function playRound(playerSelection, computerSelection) { //plays one round
     computerSelection = computerPlay();
 
     if (playerSelection === computerSelection) { //determines winner by comparing the player's and computer's plays
-        console.log("It's a tie! You both chose " + playerSelection + ".");
+        result.textContent = "It's a tie! You both chose " + playerSelection + ".";
     } else if (playerSelection === "rock" && computerSelection === "paper" ||
                 playerSelection === "paper" && computerSelection === "scissors" ||
                 playerSelection === "scissors" && computerSelection === "rock") {
                     computerScore ++ ; //increments the computer's score by 1
-                    console.log("Computer wins! " + computerSelection + " beats " + playerSelection)
+                    result.textContent = "Computer wins! " + computerSelection + " beats " + playerSelection;
     } else if (playerSelection === "rock" && computerSelection === "scissors" ||
                 playerSelection === "paper" && computerSelection === "rock" ||
                 playerSelection === "scissors" && computerSelection === "paper") {
                     playerScore ++ ; //increments the player's score by 1
-                    console.log("You win! " + playerSelection + " beats " + computerSelection);
-    } else {
-        console.log("Input error. Please check your spelling.") //error message in case of mispelled word, no scores awarded
+                    result.textContent = "You win! " + playerSelection + " beats " + computerSelection;
     }
- console.log(`Player score: ${playerScore} | Computer score: ${computerScore}`);  //reports the running score of the game in the console
+    score.textContent = `Player score: ${playerScore} | Computer score: ${computerScore}`;  //reports the running score of the game in the console
+
+
 }
 
 function game() { //main algorithm that starts the game
