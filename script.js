@@ -25,6 +25,7 @@ function computerPlay() { //returns random number which would correspond to the 
     }
 }
 
+const computerWeapon = document.querySelector("#computer-weapon");
 const result = document.querySelector("#result");
 const score = document.querySelector("#score");
 const winner = document.querySelector("#winner");
@@ -34,17 +35,18 @@ function playRound(playerSelection, computerSelection) { //plays one round
     computerSelection = computerPlay();
 
     if (playerSelection === computerSelection) { //determines winner by comparing the player's and computer's plays
-        result.textContent = "It's a tie! You both chose " + playerSelection + ".";
+        result.textContent = `It's a tie! You both chose ${computerSelection}`;
     } else if (playerSelection === "rock" && computerSelection === "paper" ||
                 playerSelection === "paper" && computerSelection === "scissors" ||
                 playerSelection === "scissors" && computerSelection === "rock") {
                     computerScore ++ ; //increments the computer's score by 1
-                    result.textContent = "Computer wins! " + computerSelection + " beats " + playerSelection;
+                    computerWeapon.textContent = `Computer chose ${computerSelection}!`
+                    result.textContent = `Computer wins! ${computerSelection} beats ${playerSelection}`;
     } else if (playerSelection === "rock" && computerSelection === "scissors" ||
                 playerSelection === "paper" && computerSelection === "rock" ||
                 playerSelection === "scissors" && computerSelection === "paper") {
                     playerScore ++ ; //increments the player's score by 1
-                    result.textContent = "You win! " + playerSelection + " beats " + computerSelection;
+                    result.textContent = `You win! ${playerSelection} beats ${computerSelection}!`;
     }
     score.textContent = `Player score: ${playerScore} | Computer score: ${computerScore}`;  //reports the running score of the game in the console
 

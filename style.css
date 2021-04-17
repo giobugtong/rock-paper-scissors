@@ -39,10 +39,15 @@ button{
     cursor: pointer;
     background-color: rgb(253, 219, 125);
 }
-#result{
+#computer-weapon{
     font-size: 20px;
     text-align: center;
     margin-top: 2em;
+}
+#result{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1em;
 }
 #score{
     font-size: 20px;
